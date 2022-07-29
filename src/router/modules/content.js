@@ -24,15 +24,18 @@ export default {
         {
             path: '/content_article',
             component: () => import('@/views/content/article'),
-            children: [
-                {
-                    path: 'add',
-
-                }
-            ],
             meta: {
                 title: '文章管理'
-            }
+            },
+            children:[
+                {
+                    path:'add',
+                    component:()=>import('@/views/content/article/addArticle'),
+                    meta: {
+                        title: '添加文章'
+                    },
+                }
+            ]
         }
     ]
 }
