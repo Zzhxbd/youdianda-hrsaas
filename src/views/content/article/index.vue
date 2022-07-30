@@ -82,6 +82,11 @@
             ></el-image>
           </template>
         </el-table-column>
+        <el-table-column label="创建时间" width="100px">
+          <template slot-scope="scope">
+            <span>{{scope.row.create_date | formatDate }}</span>
+          </template>
+        </el-table-column>
         <el-table-column label="是否推荐" width="100px">
           <template slot-scope="scope">
             <el-switch :value="scope.row.ishot" :active-value="1"></el-switch>
