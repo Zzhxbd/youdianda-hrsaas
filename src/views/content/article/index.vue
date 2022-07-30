@@ -222,6 +222,15 @@ export default {
         path: '/content_article/add',
       })
     },
+    editBtn(data){
+      this.$router.push({
+        path: '/content_article/add',
+        query:{
+          id:data.id
+        }
+      })
+      this.isAdd=true
+    }
   },
 }
 </script>

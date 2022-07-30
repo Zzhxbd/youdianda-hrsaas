@@ -15,3 +15,27 @@ export const delArticle =(params)=>{
         params
     })
 }
+// 添加文章
+export const addArticle =(data)=>{
+    return request({
+        method:'POST',
+        url:`admin/ydd_article/add`,
+        data
+    })
+}
+// 文章详情
+export const getArticleInfo =(params)=>{
+    return request({
+        method:'GET',
+        url:'admin/ydd_article/rowInfo',
+        params
+    })
+}
+// 修噶文章
+export const editArticle =(data)=>{
+    return request({
+        method:'POST',
+        url:'admin/ydd_article/update',
+        data
+    })
+}
