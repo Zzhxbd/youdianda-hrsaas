@@ -53,9 +53,10 @@
           </el-form-item>
         </el-form>
         <el-button
+        style="height:40px"
           type="primary"
           plain
-          size="small"
+          size="mini"
           icon="el-icon-plus"
           @click="addBtn"
           >新增</el-button
@@ -141,7 +142,7 @@ export default {
   name: 'ArticleIndex',
   data() {
     return {
-      isAdd:false,
+      isAdd:this.$route.path==='/content_article/add'? true:false,
       articleList: [],
       cateList: [],
       loading: true,
