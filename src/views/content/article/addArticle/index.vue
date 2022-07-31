@@ -312,6 +312,7 @@ export default {
         await this.$refs.form1.validate()
         await this.$refs.form2.validate()
         this.formData.status = 1
+        this.formData.id
         await addArticle(this.formData)
         this.$message.success('已添加草稿')
         this.$refs.form.resetFields()
