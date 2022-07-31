@@ -7,7 +7,7 @@
           :inline="true"
           :model="formData"
           :rules="rules"
-          ref="form"
+          ref="form1"
         >
           <el-form-item label="标题" prop="title" style="width: 80%">
             <el-input
@@ -123,7 +123,7 @@
           :inline="true"
           :model="formData"
           :rules="rules"
-          ref="form"
+          ref="form2"
         >
           <el-form-item
             label="seo关键字"
@@ -244,7 +244,6 @@ export default {
   },
   created() {
     if (this.$route.query.id) {
-      console.log(this.$route.query.id)
       this.getArticleInfo()
     } else {
       this.getTagList()
@@ -278,36 +277,40 @@ export default {
     },
     async isOk() {
       try {
-        await this.$refs.form.validate()
+        await this.$refs.form1.validate()
+        await this.$refs.form2.validate()
         this.formData.status = 2
         if (this.$route.query.id) {
           await editArticle(this.formData)
           this.$message.success('修改成功')
-          this.$refs.form.resetFields()
+          this.$refs.form1.resetFields()
+          this.$refs.form2.resetFields()
           this.$router.push({
             path: '/content_article',
           })
           setTimeout(function () {
             window.location.reload()
-          }, 100)
+          }, 10)
         } else {
           await addArticle(this.formData)
           this.$message.success('添加成功')
-          this.$refs.form.resetFields()
+          this.$refs.form1.resetFields()
+          this.$refs.form2.resetFields()
           this.$router.push({
             path: '/content_article',
           })
           setTimeout(function () {
             window.location.reload()
-          }, 100)
+          }, 10)
         }
       } catch (err) {
-        console.log(err)
+        console.log(err);
       }
     },
     async isSave() {
       try {
-        await this.$refs.form.validate()
+        await this.$refs.form1.validate()
+        await this.$refs.form2.validate()
         this.formData.status = 1
         await addArticle(this.formData)
         this.$message.success('已添加草稿')
@@ -319,7 +322,7 @@ export default {
           window.location.reload()
         }, 100)
       } catch (err) {
-        console.log(err)
+        console.log(err);
       }
     },
   },
