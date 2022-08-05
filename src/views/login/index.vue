@@ -81,7 +81,8 @@ export default {
 
 <style scoped>
 .login-container {
-  background-image: url('../../assets/0c5b2b7eaa2de24c6a4c5a5a533b47a5.jpeg');
+  background: url('../../assets/v2-8dfcd19bb713ed71e6044bdb84d0772d_720w.jpg') no-repeat center;
+  background-size: cover;
   min-height: 100vh;
 }
 .login-box {
@@ -98,5 +99,8 @@ export default {
   font-size: 22px;
   border-bottom: 1px solid #eee;
   line-height: 60px;
+}
+.login-box{
+  opacity: 0.7;
 }
 </style>
